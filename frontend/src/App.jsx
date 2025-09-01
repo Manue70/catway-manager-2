@@ -15,6 +15,7 @@ import Login from "./login";
 import PrivateRoute from "./PrivateRoute";
 import Navbar from "./Navbar";
 
+
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [userRole, setUserRole] = useState(localStorage.getItem("role") || "");
@@ -38,7 +39,7 @@ function App() {
       <Navbar userRole={userRole} token={token} onLogout={handleLogout} />
 
       <Routes>
-        {/* Routes publiques */}
+        
         <Route path="/" element={<Home onLogin={handleLogin} />} />
         <Route path="/login" element={<Login onLoginSuccess={handleLogin} />} />
         <Route path="/manager" element={<Manager token={token} />} />
@@ -46,7 +47,7 @@ function App() {
         <Route path="/reservations" element={<Reservations token={token} />} />
         <Route path="/add-reservation" element={<AddReservation token={token} />} />
 
-        {/* Routes protégées (admin) */}
+      
         <Route
           path="/dashboard"
           element={
