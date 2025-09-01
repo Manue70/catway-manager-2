@@ -1,0 +1,19 @@
+<% layout('layout', { title: 'Tableau de bord' }) %>
+<h2>Tableau de bord</h2>
+<p>Connecté en tant que <strong><%= user.username %></strong> (<%= user.email %>)</p>
+<p>Date du jour : <%= new Date(today).toLocaleDateString('fr-FR') %></p>
+
+<h3>Réservations en cours</h3>
+<ul>
+  <% if (reservations.length === 0) { %>
+    <li>Aucune réservation en cours.</li>
+  <% } else { %>
+    <% reservations.forEach(r => { %>
+      <li>
+        Catway <%= r.catwayNumber %> réservé par <%= r.clientName %> (Bateau : <%= r.boatName %>)
+        du <%= new Date(r.startDate).toLocaleDateString('fr-FR') %> au
+        <%= new Date(r.endDate).toLocaleDateString('fr-FR') %>
+      </li>
+    <% }) %>
+  <% } %>
+</ul>

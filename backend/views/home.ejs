@@ -1,0 +1,11 @@
+
+<% layout('layout', { title: 'Accueil' }) %>
+<h2>Bienvenue sur l'application Catway Manager</h2>
+<p>Cette application permet à la capitainerie de gérer les catways et les réservations.</p>
+
+<h3>Connexion</h3>
+<form method="post" action="/login">
+  <label>Email <input type="email" name="email" required></label>
+  <label>Mot de passe <input type="password" name="password" required></label>
+  <button type="submit">Se connecter</button>
+</form>

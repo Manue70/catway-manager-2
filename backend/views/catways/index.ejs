@@ -1,0 +1,8 @@
+<% layout('layout', { title: 'Catways' }) %>
+<h2>Liste des catways</h2>
+<a href="/catways/new">Créer un catway</a>
+<ul>
+  <% catways.forEach(c => { %>
+    <li><%= c.catwayNumber %> - <%= c.catwayType %> - <%= c.catwayState %></li>
+  <% }) %>
+</ul>
